@@ -44,7 +44,7 @@ export function SearchForm({ onSubmit }: Props) {
 
     const handlePassengerCountChange = useCallback((type: 'remove' | 'add') => {
         if (type === 'remove') {
-            setPassengerCount(old => old - 1);
+            setPassengerCount(old => old > 1 ? old - 1 : old);
         } else {
             setPassengerCount(old => old + 1);
         }
